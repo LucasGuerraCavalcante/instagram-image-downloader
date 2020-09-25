@@ -5,22 +5,21 @@ import './styles.css'
 const Form = ({ images }) => {
 
   return (
-    <>
-        {images.length === 0 && (<p>url</p>)}
+    <div className="imagesWrapper">
+        {images.length === 0 && (<p>...</p>)}
 
         {images.length >= 1 && (
                 images.map((image) => {
                     console.log(image)
                     return (
-                        <div key={image.alt}>
-                            <h3>{image.src}</h3>
-                            <span>{image.alt}</span>
+                        <div key={image.alt} className="imgBox" >
+                            <img src={image.src} alt={image.alt} className="image" />
+                            <span className="imgAlt" >{image.alt}</span>
                         </div>
                     )
                 }) 
         )}
-
-    </>
+    </div>
   );
 };
 
