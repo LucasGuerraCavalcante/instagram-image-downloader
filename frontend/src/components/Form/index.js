@@ -31,20 +31,36 @@ const Form = ({ setImages }) => {
     }
 
   return (
-    <>
-      <form className="form" onSubmit={ formSend } >
+    <div className="formContainer">
 
-          <input 
-            type="text" 
-            id="urlInput" 
-            placeholder="Instagram image url" 
-            value={ inputData }
-            onChange={ inputChange }
-        />
+      <div className="titleWrapper">
+            <h1>
+              Instagram image downloader
+            </h1>
+            <span>
+              Url image based search
+            </span>
+      </div>
 
-          <button type="submit">Search</button>   
-      </form>
-    </>
+      <div className="formWrapper">
+        <form className="form" onSubmit={ formSend } >     
+              <input 
+                type="text" 
+                id="urlInput" 
+                placeholder="Instagram image url" 
+                value={ inputData }
+                onChange={ inputChange }
+            />
+
+              <button 
+                type="submit"
+              >
+                Search
+              </button>  
+        </form>
+      </div>
+
+    </div>
   );
 };
 
